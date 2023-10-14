@@ -8,8 +8,6 @@ var hbs = require('hbs');
 var indexRouter = require('./routes/index');
 
 var app = express();
-//////////////////////////////////
-const port = 3010;
 
 // Define routes and middleware here
 
