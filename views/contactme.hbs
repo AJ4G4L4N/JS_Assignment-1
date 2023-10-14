@@ -2,16 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Meta tags for character set, viewport, and title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=">
     <title>Responsive Contact Us Page</title>
-
-    <!-- External stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../public/stylesheets/contact.css">
-
-    <!-- Internal styles -->
     <style>
         * {
             padding: 0;
@@ -20,19 +15,19 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* ... (continued styles) ... */
+        
 
         body {
             min-height: 100vh;
             width: 100%;
             background-color: #FFF;
+            /* Set background color to white */
             background-image: url('bg-img.webp');
             background-size: cover;
             background-position: center;
             position: relative;
         }
 
-        /* CSS variables for color scheme and max width */
         :root {
             --primary-color: #a855f7;
             --primary-color-dark: #9333ea;
@@ -43,7 +38,6 @@
             --max-width: 1200px;
         }
 
-        /* Navigation styles */
         nav {
             font-family: "Poppins", sans-serif;
             width: 100%;
@@ -63,9 +57,55 @@
             justify-content: space-between;
         }
 
-        /* ... (continued navigation styles) ... */
+        nav .logo a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
 
-        /* Contact section styles */
+        nav .logo a:hover {
+            color: var(--primary-color-dark);
+        }
+
+        nav .checkbox {
+            display: none;
+        }
+
+        nav input {
+            display: none;
+        }
+
+        nav .checkbox i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            list-style: none;
+            transition: left 0.3s;
+        }
+
+        ul li a {
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            border-top-color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+
         section {
             position: relative;
             z-index: 3;
@@ -88,6 +128,7 @@
 
         .section-header h2 {
             color: #000;
+            /* Set text color to black */
             font-weight: bold;
             font-size: 4vw;
             margin-bottom: 2%;
@@ -95,6 +136,7 @@
 
         .section-header p {
             color: #000;
+            /* Set text color to black */
         }
 
         .row {
@@ -104,12 +146,147 @@
             justify-content: space-between;
         }
 
-        /* ... (continued styles for contact info and form) ... */
+        .contact-info {
+            flex: 1;
+            margin-bottom: 5%;
+        }
+
+        .contact-info-item {
+            display: flex;
+            margin-bottom: 3%;
+        }
+
+        .contact-info-icon {
+            height: 7vw;
+            width: 7vw;
+            background-color: #fff;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .contact-info-icon i {
+            font-size: 3vw;
+            line-height: 7vw;
+        }
+
+        .contact-info-content {
+            margin-left: 4%;
+        }
+
+        .contact-info-content h4 {
+            color: #000;
+            font-size: 2vw;
+            margin-bottom: 1%;
+        }
+
+        .contact-info-content p {
+            color: #000;
+            /* Set text color to black */
+            font-size: 1vw;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 4vw;
+            flex: 1;
+            padding-bottom: 2%;
+            padding-top: 2%;
+        }
+
+        .contact-form h2 {
+            font-weight: bold;
+            font-size: 3vw;
+            margin-bottom: 1%;
+            color: #333;
+        }
+
+        .contact-form .input-box {
+            position: relative;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        .contact-form .input-box input,
+        .contact-form .input-box textarea {
+            width: 100%;
+            padding: 1.5%;
+            font-size: 2vw;
+            margin: 2% 0;
+            border: none;
+            border-bottom: 0.2vw solid #333;
+            outline: none;
+            resize: none;
+        }
+
+        .contact-form .input-box span {
+            position: absolute;
+            left: 0;
+            padding: 1.5%;
+            font-size: 2vw;
+            margin: 2% 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #666;
+        }
+
+        .contact-form .input-box input:focus~span,
+        .contact-form .input-box textarea:focus~span {
+            color: #e91e63;
+            font-size: 1vw;
+            transform: translateY(-20%);
+        }
+
+        .contact-form .input-box input[type="submit"] {
+            width: 100%;
+            background: #00bcd4;
+            color: #FFF;
+            border: none;
+            cursor: pointer;
+            padding: 2%;
+            font-size: 2vw;
+            border: 0.1vw solid #00bcd4;
+            transition: 0.5s;
+        }
+
+        .contact-form .input-box input[type="submit"]:hover {
+            background: #FFF;
+            color: #00bcd4;
+        }
+
+        section {
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        .row {
+            flex-direction: row;
+        }
+
+        .contact-info {
+            margin-bottom: 4%;
+            flex: 1;
+            width: 50%;
+        }
+
+        .contact-form {
+            flex: 1;
+            width: 50%;
+        }
+
+        .social-media-list {
+            display: block;
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+
+        .social-media-list li {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Navigation bar -->
     <nav>
         <div class="nav__content">
             <div class="logo"><a href="#">Anuj Jaglan</a></div>
@@ -126,12 +303,13 @@
         </div>
     </nav>
 
-    <!-- Contact section -->
     <section>
-        <!-- Section header -->
+
         <div class="section-header">
             <div class="container">
-                <h2>Contact me</h2>
+                <h2>
+                    Contact me
+                </h2>
                 <p>
                     I am thrilled to connect with you and address any inquiries you may have. Your satisfaction and
                     experience are of utmost importance to me. Here's how you can reach out to me:
@@ -139,36 +317,120 @@
             </div>
         </div>
 
-        <!-- Container for contact info and form -->
         <div class="container">
             <div class="row">
-                <!-- Contact info section -->
-                <div class="contact-info">
-                    <!-- ... (continued contact info items) ... -->
-                </div>
 
-                <!-- Contact form section -->
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+
+                        <div class="contact-info-content">
+                            <h4>Office Address:</h4>
+                            <p>
+                                123 Luxury Drive<br />
+                                Mumbai, MH 98765<br />
+                                India
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+
+                        <div class="contact-info-content">
+                            <h4>Give Me a Call:</h4>
+                            <p>
+                                General Inquiries: +1-800-DEV-INFO (1-800-338-4636)<br />
+                                Project Collaborations: +1-888-WEB-PRO (1-888-932-7766)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <div class="contact-info-content">
+                            <h4>Email Me:</h4>
+                            <p>
+                                General Inquiries: info@anujjaglan.com<br />
+                                Project Support: support@anujjaglan.com<br />
+                                Collaboration Proposals: collaborate@anujjaglan.com<br />
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+
+                        <div class="contact-info-content">
+                            <h4>Connect with Me Online:</h4>
+                            <p>
+                                Follow us on social media for the latest updates, special offers, and behind-the-scenes
+                                glimpses into the world of luxury driving:
+                            <ul class="social-media-list">
+                                <li><i class="fab fa-facebook"></i> Anuj Jaglan Official</li>
+                                <li><i class="fab fa-instagram"></i> Anuj_Jaglan</li>
+                                <li><i class="fab fa-twitter"></i> Anuj Jaglan</li>
+                                <li><i class="fab fa-linkedin"></i> Anuj_Jaglan</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="contact-form">
                     <form action="" id="contact-form">
                         <h2>Contact Form:</h2>
                         <p>
-                            <!-- ... (introductory paragraph for the form) ... -->
+                            I greatly appreciate your input and is continuously working to improve my skills. If you
+                            have any suggestions or comments, please don't hesitate to reach out to me at
+                            contact@anujjaglan.com.
+                            <br /><br />Alternatively, you are encouraged to use the contact form below to share your
+                            thoughts. I am enthusiastic about hearing from you and hoping to work with you in future.
                         </p>
-                        <!-- ... (form input fields and submit button) ... -->
+                        <div class="input-box">
+                            <input type="text" required="true" name="">
+                            <span>Full Name</span>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="email" required="true" name="">
+                            <span>Email</span>
+                        </div>
+
+                        <div class="input-box">
+                            <textarea required="true" name=""></textarea>
+                            <span>Type your Message...</span>
+                        </div>
+
+                        <div class="input-box">
+                            <input type="submit" value="Send" name="">
+                        </div>
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="contact-info-content">
+            <br /><br />
+            <h4>Connect with Me:</h4>
+            <p>
+                I am dedicated and is available to assist you during our business hours, Monday through Friday, 9:00 AM
+                to 6:00 PM, and Saturday from 10:00 AM to 4:00 PM (local time). Whether you have questions about web
+                development, coding projects, or any other aspect of our services, we're here to help.
 
-            <!-- Additional contact info content -->
-            <div class="contact-info-content">
                 <br /><br />
-                <h4>Connect with Me:</h4>
-                <p>
-                    <!-- ... (additional content about availability and gratitude) ... -->
-                </p>
-            </div>
+                Thank you for choosing me 🧡. I look forward to exceeding your expectations and being a part of your
+                digital journey.
+            </p>
+        </div>
+
+
         </div>
     </section>
-</body>
 
-</html>
+</body>
