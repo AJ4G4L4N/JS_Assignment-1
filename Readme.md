@@ -45,7 +45,7 @@ This is a personal portfolio website made using Express and handlebars. The webs
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Othesr
+## Others
 
 Portfolio Link: https://anujjaglan1.onrender.com/
 <p align="right">(<a href="#top">back to top</a>)</p>
