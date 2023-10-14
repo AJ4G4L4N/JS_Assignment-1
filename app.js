@@ -11,10 +11,6 @@ var app = express();
 
 // Define routes and middleware here
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-////////////////////////////////////////
 // view engine setup
 hbs.registerPartials(path.join(__dirname, 'views/partials'))
 app.set('views', path.join(__dirname, 'views'));
